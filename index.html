@@ -30,41 +30,47 @@
     </div>
 
     <div class="card">
+       
+<label>Perubahan Harga</label>
 
-        <label>Persentase</label>
+<div class="slider-label">
+    <span>-300%</span>
+    <span>0%</span>
+    <span>+300%</span>
+</div>
 
-        <input
-            type="range"
-            id="persen"
-            min="0"
-            max="10"
-            step="0.1"
-            value="2">
+<input
+    type="range"
+    id="persen"
+    min="-300"
+    max="300"
+    step="1"
+    value="0">
 
-        <div class="nilai">
-            <span id="persenValue">2.0 %</span>
-        </div>
+<div class="nilai">
+    <span id="persenValue">0 %</span>
+</div>
 
     </div>
 
     <div class="card hasil">
 
-        <div class="row">
-            <span>Harga Beli</span>
-            <span id="beli">0</span>
-        </div>
-
-        <div class="row">
-            <span>Harga Dasar</span>
-            <span id="dasar">2910</span>
-        </div>
-
-        <div class="row">
-            <span>Harga Jual</span>
-            <span id="jual">0</span>
-        </div>
-
+    <div class="row">
+        <span>Harga Awal</span>
+        <span id="dasar">0</span>
     </div>
+
+    <div class="row">
+        <span>Selisih</span>
+        <span id="selisih">0</span>
+    </div>
+
+    <div class="row">
+        <span>Harga Hasil</span>
+        <span id="hasil">0</span>
+    </div>
+
+</div>
 
 </div>
 
