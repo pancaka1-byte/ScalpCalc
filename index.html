@@ -11,7 +11,6 @@
     <div class="calculator-card">
         <h2>SCALPCALC</h2>
         
-        <!-- Input Group -->
         <div class="input-group">
             <label>Harga Dasar</label>
             <input type="number" id="hargaDasar" value="2910" placeholder="Contoh: 2910">
@@ -24,58 +23,50 @@
 
         <hr>
 
-        <!-- Quick Buttons -->
         <div class="quick-buttons">
-            <button onclick="adjustPoin(-10)">-10</button>
+            <button type="button" onclick="adjustPoin(-10)">-10</button>
             <div class="vertical-stack">
-                <button onclick="adjustPoin(-100)">-100</button>
-                <button onclick="adjustPoin(-1)">-1</button>
-                <button onclick="adjustPoin(100)">+100</button>
+                <button type="button" onclick="adjustPoin(-100)">-100</button>
+                <button type="button" onclick="adjustPoin(-1)">-1</button>
+                <button type="button" onclick="adjustPoin(100)">+100</button>
             </div>
-            <button onclick="adjustPoin(1)">+1</button>
-            <button onclick="adjustPoin(10)">+10</button>
+            <button type="button" onclick="adjustPoin(1)">+1</button>
+            <button type="button" onclick="adjustPoin(10)">+10</button>
         </div>
 
         <hr>
 
-        <!-- Slider Section -->
         <div class="slider-container">
             <input type="range" id="persenSlider" min="-300" max="300" step="0.1" value="0">
             <div class="slider-value"><span id="displayPoin">0</span> poin</div>
-            <!-- TAMBAHAN: % Selisih di bawah poin -->
             <div id="displayPersen" class="slider-persen">0.00%</div>
         </div>
 
         <hr>
 
-        <!-- Result Display -->
         <div class="results">
-            <div class="result-row"><span>Harga Dasar</span> <span id="resHargaDasar">2910</span></div>
-            <div class="result-row"><span>Harga Hasil</span> <span id="resHargaHasil">2910</span></div>
+            <div class="result-row"><span>Harga Dasar</span> <span id="resHargaDasar">2.910</span></div>
+            <div class="result-row"><span>Harga Hasil</span> <span id="resHargaHasil">2.910</span></div>
             <div class="result-row"><span>Selisih</span> <span id="resSelisih">0</span></div>
             <div class="result-row"><strong>Profit</strong> <strong id="resProfit">0</strong></div>
         </div>
 
         <hr>
 
-        <!-- TAMBAHAN: Input Nama Catatan & Tombol Simpan -->
         <div class="save-section">
             <input type="text" id="namaCatatan" placeholder="Nama Catatan (Misal: BTC Long)">
-            <button id="btnSimpan" class="btn-success">SIMPAN DATA</button>
+            <button type="button" id="btnSimpan" class="btn-success">SIMPAN DATA</button>
         </div>
 
-        <!-- Action Buttons -->
         <div class="action-buttons">
-            <button id="btnReset" class="btn-secondary">RESET</button>
-            <button id="btnSalin" class="btn-primary">SALIN</button>
+            <button type="button" id="btnReset" class="btn-secondary">RESET</button>
+            <button type="button" id="btnSalin" class="btn-primary">SALIN</button>
         </div>
 
-        <!-- TAMBAHAN: Area Riwayat Catatan -->
         <div class="history-section">
             <h3>Riwayat Catatan</h3>
             <div id="listCatatan" class="list-catatan">
-                <!-- Data catatan akan muncul di sini secara dinamis -->
-            </div>
+                </div>
         </div>
     </div>
 
