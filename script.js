@@ -17,6 +17,7 @@ const btnSalin = document.getElementById('btnSalin');
 
 const namaCatatanInput = document.getElementById('namaCatatan');
 const btnSimpan = document.getElementById('btnSimpan');
+const btnEkspor = document.getElementById('btnEkspor'); // Baru
 const listCatatan = document.getElementById('listCatatan');
 
 let dataAktif = {};
@@ -28,18 +29,15 @@ function hitungKalkulasi() {
     const jumlahKoin = parseFloat(jumlahKoinInput.value) || 1; 
     const persentase = parseFloat(persenSlider.value);
     
-    // Hitung logika inti
     const selisihPoin = Math.round((persentase / 100) * hargaDasar);
     const hargaHasil = hargaDasar + selisihPoin;
     const totalProfit = selisihPoin * jumlahKoin;
 
-    // Hitung nilai aset awal & akhir secara real-time
     const asetAwal = hargaDasar * jumlahKoin;
     const asetAkhir = hargaHasil * jumlahKoin;
 
     const realPersen = hargaDasar > 0 ? ((selisihPoin / hargaDasar) * 100).toFixed(2) : "0.00";
 
-    // Update UI Utama
     displayPoin.textContent = (selisihPoin >= 0 ? '+' : '') + formatAngka(selisihPoin);
     displayPersen.textContent = (selisihPoin >= 0 ? '+' : '') + realPersen + "%";
     
@@ -47,7 +45,6 @@ function hitungKalkulasi() {
     resHargaHasil.textContent = formatAngka(hargaHasil);
     resSelisih.textContent = (selisihPoin >= 0 ? '+' : '') + formatAngka(selisihPoin);
     
-    // Masukkan data aset ke UI secara real-time
     resAsetAwal.textContent = formatAngka(asetAwal);
     resAsetAkhir.textContent = formatAngka(asetAkhir);
     
@@ -61,7 +58,6 @@ function hitungKalkulasi() {
         resProfit.className = '';
     }
 
-    // Simpan data lengkap ke objek aktif
     dataAktif = {
         hargaDasar,
         jumlahKoin,
@@ -148,6 +144,45 @@ function tampilkanRiwayat() {
     });
 }
 
+// ================= FUNGSI BARU: EKSPOR DATA KE DOWNLOAD =================
+function eksporKeDevice() {
+    if (riwayatData.length === 0) {
+        alert("Tidak ada data riwayat yang bisa diekspor!");
+        return;
+    }
+
+    // Bangun nama file otomatis: scalpDDMMYY HHMM
+    const sekarang = new Date();
+    
+    const dd = String(sekarang.getDate()).padStart(2, '0');
+    const mm = String(sekarang.getMonth() + 1).padStart(2, '0'); // Bulan dimulai dari 0
+    const yy = String(sekarang.getFullYear()).slice(-2); // Ambil 2 angka terakhir tahun
+    
+    const hh = String(sekarang.getHours()).padStart(2, '0');
+    const mnt = String(sekarang.getMinutes()).padStart(2, '0');
+
+    const namaFile = `scalp${dd}${mm}${yy} ${hh}${mnt}.json`;
+
+    // Ubah data riwayat menjadi format teks terbaca teks rapi
+    const dataString = JSON.stringify(riwayatData, null, 4);
+    
+    // Proses pembuatan file unduhan virtual di browser Android
+    const blob = new Blob([dataString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    
+    const linkUnduh = document.createElement("a");
+    linkUnduh.href = url;
+    linkUnduh.download = namaFile;
+    
+    // Trigger download otomatis
+    document.body.appendChild(linkUnduh);
+    linkUnduh.click();
+    
+    // Bersihkan elemen sampah dari memori browser
+    document.body.removeChild(linkUnduh);
+    URL.revokeObjectURL(url);
+}
+
 window.hapusCatatan = function(id) {
     if (confirm("Hapus catatan ini dari riwayat?")) {
         riwayatData = riwayatData.filter(item => item.id !== id);
@@ -156,10 +191,12 @@ window.hapusCatatan = function(id) {
     }
 }
 
+// Event Listeners
 hargaDasarInput.addEventListener('input', hitungKalkulasi);
 jumlahKoinInput.addEventListener('input', hitungKalkulasi);
 persenSlider.addEventListener('input', hitungKalkulasi);
 btnSimpan.addEventListener('click', simpanCatatan);
+btnEkspor.addEventListener('click', eksporKeDevice); // Pasang trigger tombol ekspor
 
 btnReset.addEventListener('click', () => {
     hargaDasarInput.value = "2910";
@@ -186,4 +223,3 @@ Profit: ${resProfit.textContent}`;
 
 hitungKalkulasi();
 tampilkanRiwayat();
-        
