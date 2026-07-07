@@ -8,8 +8,8 @@ const displayPersen = document.getElementById('displayPersen');
 const resHargaDasar = document.getElementById('resHargaDasar');
 const resHargaHasil = document.getElementById('resHargaHasil');
 const resSelisih = document.getElementById('resSelisih');
-const resAsetAwal = document.getElementById('resAsetAwal');   // Baru
-const resAsetAkhir = document.getElementById('resAsetAkhir'); // Baru
+const resAsetAwal = document.getElementById('resAsetAwal');   
+const resAsetAkhir = document.getElementById('resAsetAkhir'); 
 const resProfit = document.getElementById('resProfit');
 
 const btnReset = document.getElementById('btnReset');
@@ -33,7 +33,7 @@ function hitungKalkulasi() {
     const hargaHasil = hargaDasar + selisihPoin;
     const totalProfit = selisihPoin * jumlahKoin;
 
-    // TAMBAHAN: Hitung nilai aset awal & akhir secara real-time
+    // Hitung nilai aset awal & akhir secara real-time
     const asetAwal = hargaDasar * jumlahKoin;
     const asetAkhir = hargaHasil * jumlahKoin;
 
@@ -47,7 +47,7 @@ function hitungKalkulasi() {
     resHargaHasil.textContent = formatAngka(hargaHasil);
     resSelisih.textContent = (selisihPoin >= 0 ? '+' : '') + formatAngka(selisihPoin);
     
-    // Masukkan data aset ke UI
+    // Masukkan data aset ke UI secara real-time
     resAsetAwal.textContent = formatAngka(asetAwal);
     resAsetAkhir.textContent = formatAngka(asetAkhir);
     
@@ -61,7 +61,7 @@ function hitungKalkulasi() {
         resProfit.className = '';
     }
 
-    // Simpan data lengkap ke objek aktif (termasuk nilai aset)
+    // Simpan data lengkap ke objek aktif
     dataAktif = {
         hargaDasar,
         jumlahKoin,
@@ -101,7 +101,7 @@ function simpanCatatan() {
 
     const sekarang = new Date();
     const tanggal = sekarang.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' });
-    const jam = ClinicalTime = sekarang.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    const jam = sekarang.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     const waktuString = `${tanggal} - ${jam}`;
 
     const catatanBaru = {
