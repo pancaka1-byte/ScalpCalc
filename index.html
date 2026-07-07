@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ScalpCalc v1.0</title>
+<title>ScalpCalc</title>
 
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -14,18 +16,16 @@
 <div class="container">
 
     <h1>📈 ScalpCalc</h1>
-    <p class="subtitle">Kalkulator Harga Trading</p>
+    <p class="subtitle">Kalkulator Scalping Indodax</p>
 
-    <!-- Harga Dasar -->
     <div class="card">
 
         <label>Harga Dasar</label>
 
         <input
             type="number"
-            id="hargaDasar"
-            value="2910"
-            min="1">
+            id="harga"
+            value="2910">
 
         <div class="btn-group">
 
@@ -42,72 +42,48 @@
     </div>
 
 
-    <!-- Mode -->
-
     <div class="card">
 
-        <label>Mode Perhitungan</label>
+        <label>Jumlah Koin</label>
 
-        <div class="mode-group">
-
-            <label class="radio">
-
-                <input
-                    type="radio"
-                    name="mode"
-                    value="persen"
-                    checked>
-
-                Persen (%)
-
-            </label>
-
-            <label class="radio">
-
-                <input
-                    type="radio"
-                    name="mode"
-                    value="poin">
-
-                Poin
-
-            </label>
-
-        </div>
+        <input
+            type="number"
+            id="qty"
+            value="120">
 
     </div>
 
 
-    <!-- Slider -->
-
     <div class="card">
 
-        <label id="judulSlider">
-            Perubahan (%)
-        </label>
+        <label>Perubahan Harga (Poin)</label>
 
-        <div class="slider-header">
+        <div class="sliderInfo">
 
-            <span id="minLabel">-300%</span>
+            <span>-1000</span>
 
-            <span id="nilaiSlider">0%</span>
+            <span id="nilaiSlider">0</span>
 
-            <span id="maxLabel">+300%</span>
+            <span>+1000</span>
 
         </div>
 
         <input
+
             type="range"
+
             id="slider"
-            min="-300"
-            max="300"
+
+            min="-1000"
+
+            max="1000"
+
             value="0"
+
             step="1">
 
     </div>
 
-
-    <!-- Hasil -->
 
     <div class="card hasil">
 
@@ -115,9 +91,7 @@
 
             <span>Harga Dasar</span>
 
-            <span id="hargaAwal">
-                2.910
-            </span>
+            <span id="hargaDasar">2910</span>
 
         </div>
 
@@ -125,93 +99,50 @@
 
             <span>Perubahan</span>
 
-            <span id="perubahan">
-                0%
-            </span>
+            <span id="selisih">0</span>
 
         </div>
 
         <div class="row">
 
-            <span>Selisih</span>
+            <span>Harga Hasil</span>
 
-            <span id="selisih">
-                0
-            </span>
+            <span id="hargaHasil">2910</span>
 
         </div>
 
-        <div class="row total">
+        <div class="row">
 
-            <span>Harga Hasil</span>
+            <span>Profit / Loss</span>
 
-            <span id="hargaHasil">
-                2.910
-            </span>
+            <span id="profit">0</span>
 
         </div>
 
     </div>
 
-
-    <!-- Tombol -->
 
     <div class="aksi">
 
-        <button id="resetBtn">
-            Reset
+        <button onclick="resetSemua()">
+
+            RESET
+
         </button>
 
-        <button id="copyBtn">
-            Salin
+        <button onclick="sliderNol()">
+
+            0
+
+        </button>
+
+        <button onclick="salinHasil()">
+
+            SALIN
+
         </button>
 
     </div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
-
-<div class="    <span>-300%</span>
-    <span>0%</span>
-    <span>+300%</span>
-</div>
-
-<input
-    type="range"
-    id="persen"
-    min="-300"
-    max="300"
-    step="1"
-    value="0">
-
-<div class="nilai">
-    <span id="persenValue">0 %</span>
-</div>
-
-    </div>
-
-    <div class="card hasil">
-
-    <div class="row">
-        <span>Harga Awal</span>
-        <span id="dasar">0</span>
-    </div>
-
-    <div class="row">
-        <span>Selisih</span>
-        <span id="selisih">0</span>
-    </div>
-
-    <div class="row">
-        <span>Harga Hasil</span>
-        <span id="hasil">0</span>
-    </div>
-
-</div>
 
 </div>
 
