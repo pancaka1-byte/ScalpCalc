@@ -97,13 +97,20 @@ hr {
 #persenSlider {
     width: 100%;
     margin-bottom: 8px;
-    accent-color: #007aff; /* Warna slider biru iOS */
+    accent-color: #007aff;
 }
 
 .slider-value {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #333;
+}
+
+.slider-persen {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2px;
+    font-weight: 500;
 }
 
 /* Results Display */
@@ -127,6 +134,33 @@ hr {
 .profit-green { color: #34c759 !important; }
 .loss-red { color: #ff3b30 !important; }
 
+/* Save Section */
+.save-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.save-section input {
+    flex: 2;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.btn-success {
+    flex: 1;
+    background: #34c759;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
 /* Action Footer */
 .action-buttons {
     display: flex;
@@ -143,40 +177,9 @@ hr {
     font-size: 0.95rem;
     cursor: pointer;
 }
-/* --- (Pertahankan kode CSS lama Anda, lalu TAMBAHKAN baris di bawah ini) --- */
 
-.slider-persen {
-    font-size: 0.85rem;
-    color: #666;
-    margin-top: 2px;
-}
-
-/* Save Section */
-.save-section {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.save-section input {
-    flex: 2;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    outline: none;
-}
-
-.btn-success {
-    flex: 1;
-    background: #34c759;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
+.btn-secondary { background: #e5e5ea; color: #333; }
+.btn-primary { background: #007aff; color: #fff; }
 
 /* History Section */
 .history-section {
@@ -187,59 +190,64 @@ hr {
 .history-section h3 {
     font-size: 1rem;
     color: #333;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 5px;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #f0f0f2;
+    padding-bottom: 6px;
 }
 
 .list-catatan {
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-right: 2px;
 }
 
 .item-catatan {
     background: #f8f9fa;
     border-left: 4px solid #007aff;
-    padding: 10px;
-    border-radius: 0 8px 8px 0;
+    padding: 12px;
+    border-radius: 0 12px 12px 0;
     font-size: 0.85rem;
     position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
 .item-catatan .header-catatan {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 4px;
+    color: #222;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    padding-right: 20px;
 }
 
 .item-catatan .waktu-catatan {
     font-size: 0.75rem;
-    color: #999;
+    color: #8e8e93;
+    margin-bottom: 8px;
 }
 
 .item-catatan .detail-catatan {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 4px;
     color: #555;
-    margin-top: 4px;
+    border-top: 1px dashed #e5e5ea;
+    padding-top: 8px;
 }
 
 .item-catatan .btn-hapus {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
     color: #ff3b30;
     font-weight: bold;
     cursor: pointer;
-    font-size: 0.85rem;
+    font-size: 1.2rem;
+    line-height: 1;
 }
-
-.btn-secondary { background: #e5e5ea; color: #333; }
-.btn-primary { background: #007aff; color: #fff; }
