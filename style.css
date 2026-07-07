@@ -143,6 +143,103 @@ hr {
     font-size: 0.95rem;
     cursor: pointer;
 }
+/* --- (Pertahankan kode CSS lama Anda, lalu TAMBAHKAN baris di bawah ini) --- */
+
+.slider-persen {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 2px;
+}
+
+/* Save Section */
+.save-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.save-section input {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.btn-success {
+    flex: 1;
+    background: #34c759;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* History Section */
+.history-section {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.history-section h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.list-catatan {
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-catatan {
+    background: #f8f9fa;
+    border-left: 4px solid #007aff;
+    padding: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.85rem;
+    position: relative;
+}
+
+.item-catatan .header-catatan {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.item-catatan .waktu-catatan {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+.item-catatan .detail-catatan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #555;
+    margin-top: 4px;
+}
+
+.item-catatan .btn-hapus {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #ff3b30;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
 
 .btn-secondary { background: #e5e5ea; color: #333; }
 .btn-primary { background: #007aff; color: #fff; }
