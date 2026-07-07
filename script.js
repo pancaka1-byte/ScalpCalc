@@ -186,3 +186,4 @@ Profit: ${resProfit.textContent}`;
 
 hitungKalkulasi();
 tampilkanRiwayat();
+        
