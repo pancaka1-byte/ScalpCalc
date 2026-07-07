@@ -1,109 +1,148 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-body{
-    background:#111827;
-    color:#ffffff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    padding:20px;
+body {
+    background-color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
 }
 
-.container{
-    width:100%;
-    max-width:420px;
+.calculator-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-h1{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:5px;
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.subtitle{
-    text-align:center;
-    color:#bdbdbd;
-    margin-bottom:25px;
+.input-group {
+    margin-bottom: 12px;
 }
 
-.card{
-    background:#1f2937;
-    border-radius:15px;
-    padding:20px;
-    margin-bottom:18px;
-    box-shadow:0 5px 15px rgba(0,0,0,.35);
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 4px;
 }
 
-label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:bold;
+.input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    background-color: #fafafa;
+    outline: none;
 }
 
-input[type=number]{
-    width:100%;
-    padding:14px;
-    font-size:24px;
-    border:none;
-    border-radius:10px;
-    text-align:center;
-    outline:none;
+hr {
+    border: 0;
+    border-top: 1px dashed #e0e0e0;
+    margin: 18px 0;
 }
 
-input[type=range]{
-    width:100%;
-    margin-top:15px;
+/* Quick Buttons Layout */
+.quick-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
-.nilai{
-    text-align:center;
-    margin-top:10px;
-    font-size:22px;
-    font-weight:bold;
-    color:#4ade80;
+.quick-buttons button {
+    flex: 1;
+    padding: 12px 5px;
+    border: none;
+    background: #f0f0f2;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.btn-group{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-top:18px;
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
 }
 
-button{
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:#2563eb;
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    transition:.2s;
+.vertical-stack button {
+    padding: 6px 5px;
 }
 
-button:hover{
-    background:#1d4ed8;
+/* Slider Style */
+.slider-container {
+    text-align: center;
+    padding: 5px 0;
 }
 
-.hasil .row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 0;
-    border-bottom:1px solid rgba(255,255,255,.1);
-    font-size:20px;
+#persenSlider {
+    width: 100%;
+    margin-bottom: 8px;
+    accent-color: #007aff; /* Warna slider biru iOS */
 }
 
-.hasil .row:last-child{
-    border-bottom:none;
+.slider-value {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
 }
 
-#beli{
-    color:#22c55e;
-    font-weight
+/* Results Display */
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+}
+
+#resProfit {
+    font-size: 1.1rem;
+}
+
+.profit-green { color: #34c759 !important; }
+.loss-red { color: #ff3b30 !important; }
+
+/* Action Footer */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.btn-secondary { background: #e5e5ea; color: #333; }
+.btn-primary { background: #007aff; color: #fff; }
