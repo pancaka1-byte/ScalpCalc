@@ -1,40 +1,179 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ScalpCalc</title>
+<title>ScalpCalc v1.0</title>
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>ScalpCalc</h1>
-<p class="subtitle">Kalkulator Persentase Harga</p>
+    <h1>📈 ScalpCalc</h1>
+    <p class="subtitle">Kalkulator Harga Trading</p>
 
-<div class="card">
+    <!-- Harga Dasar -->
+    <div class="card">
 
-<label>Harga Awal</label>
+        <label>Harga Dasar</label>
 
-<input type="number" id="harga" value="2950">
+        <input
+            type="number"
+            id="hargaDasar"
+            value="2910"
+            min="1">
 
-<div class="btn-group">
+        <div class="btn-group">
 
-<button onclick="ubahHarga(-100)">-100</button>
-<button onclick="ubahHarga(-10)">-10</button>
-<button onclick="ubahHarga(10)">+10</button>
-<button onclick="ubahHarga(100)">+100</button>
+            <button onclick="ubahHarga(-100)">-100</button>
+            <button onclick="ubahHarga(-10)">-10</button>
+            <button onclick="ubahHarga(-1)">-1</button>
+
+            <button onclick="ubahHarga(1)">+1</button>
+            <button onclick="ubahHarga(10)">+10</button>
+            <button onclick="ubahHarga(100)">+100</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mode -->
+
+    <div class="card">
+
+        <label>Mode Perhitungan</label>
+
+        <div class="mode-group">
+
+            <label class="radio">
+
+                <input
+                    type="radio"
+                    name="mode"
+                    value="persen"
+                    checked>
+
+                Persen (%)
+
+            </label>
+
+            <label class="radio">
+
+                <input
+                    type="radio"
+                    name="mode"
+                    value="poin">
+
+                Poin
+
+            </label>
+
+        </div>
+
+    </div>
+
+
+    <!-- Slider -->
+
+    <div class="card">
+
+        <label id="judulSlider">
+            Perubahan (%)
+        </label>
+
+        <div class="slider-header">
+
+            <span id="minLabel">-300%</span>
+
+            <span id="nilaiSlider">0%</span>
+
+            <span id="maxLabel">+300%</span>
+
+        </div>
+
+        <input
+            type="range"
+            id="slider"
+            min="-300"
+            max="300"
+            value="0"
+            step="1">
+
+    </div>
+
+
+    <!-- Hasil -->
+
+    <div class="card hasil">
+
+        <div class="row">
+
+            <span>Harga Dasar</span>
+
+            <span id="hargaAwal">
+                2.910
+            </span>
+
+        </div>
+
+        <div class="row">
+
+            <span>Perubahan</span>
+
+            <span id="perubahan">
+                0%
+            </span>
+
+        </div>
+
+        <div class="row">
+
+            <span>Selisih</span>
+
+            <span id="selisih">
+                0
+            </span>
+
+        </div>
+
+        <div class="row total">
+
+            <span>Harga Hasil</span>
+
+            <span id="hargaHasil">
+                2.910
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Tombol -->
+
+    <div class="aksi">
+
+        <button id="resetBtn">
+            Reset
+        </button>
+
+        <button id="copyBtn">
+            Salin
+        </button>
+
+    </div>
 
 </div>
 
-</div>
+<script src="script.js"></script>
 
+</body>
+</html>
 
 <div class="    <span>-300%</span>
     <span>0%</span>
